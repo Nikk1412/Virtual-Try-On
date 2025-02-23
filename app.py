@@ -6,7 +6,7 @@ def main():
     st.set_page_config(page_title="Virtual Try-On", layout="wide")
     
     # Sidebar for navigation
-    st.sidebar.image("name-png-logo-nik-creation-nikhil-creations.png", width=200)
+    st.sidebar.image("TKIET logo.png", width=200)
     st.sidebar.title("Navigation")
     page = st.sidebar.radio("Go to", ["Home", "OOTDiffusion", "IDM-VTON", "OutfitAnyone"])
     
