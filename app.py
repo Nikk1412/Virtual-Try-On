@@ -17,7 +17,7 @@ STUDENT_INFO = [
 # --- HEADER SECTION ---
 col1, col2, col3 = st.columns([2, 2, 1])
 with col1:
-    st.image("college_logo.png", width=100)  # Replace with actual logo
+    st.image("TKIET logo.png", width=100)  # Replace with actual logo
     st.title("👗 Virtual Try-On System")
     st.subheader("AI-Powered Clothing Try-On Experience")
 
