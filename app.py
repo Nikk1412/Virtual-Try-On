@@ -37,7 +37,7 @@ def show_home():
             """, unsafe_allow_html=True)
     
     with col2:
-      #  image = Image.open("TKIET logo.png")  # Replace with actual cover image
+        image = Image.open("")  # Replace with actual cover image
         st.image(image, use_column_width=True)
     
     # Group Details
