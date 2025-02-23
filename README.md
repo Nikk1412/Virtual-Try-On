@@ -21,9 +21,9 @@ Welcome to the **Virtual Try-On System**, an AI-powered application designed to 
 - **Pratik Sopan Gulig** (Roll No. 68)
 
 ### 🎓 Under the Guidance of
-**Prof. A. G. Patil**
-Assistant Professor, SWSVS,
-Tatyasaheb Kore Institute of Engineering and Technology,
+**Prof. A. G. Patil**  
+Assistant Professor, SWSVS,  
+Tatyasaheb Kore Institute of Engineering and Technology,  
 Warananagar (An Autonomous Institute)
 
 ## 🛠️ How to Run
@@ -41,6 +41,27 @@ Warananagar (An Autonomous Institute)
    streamlit run app.py
    ```
 
+## 🖼️ Virtual Try-On Architecture
+
+Below is the architecture diagram showcasing how OOTDiffusion, IDM-VTON, and OutfitAnyone process image data to generate virtual try-on results.
+
+![Architecture Diagram](architecture_diagram.png)
+
+### 🏗️ How It Works (Simple Explanation)
+1. **Input Image:** The user uploads a photo of themselves and a clothing image.
+2. **Preprocessing:** The system aligns the person’s body shape with the outfit.
+3. **Model Processing:**
+   - **OOTDiffusion**: Uses diffusion models for ultra-realistic clothing synthesis.
+   - **IDM-VTON**: Focuses on high-accuracy garment warping.
+   - **OutfitAnyone**: Ensures compatibility for different body types.
+4. **Output Image:** The system generates a realistic try-on image where the clothing fits naturally on the user’s body.
+
+### 📌 Example:
+Imagine you want to try on a **blue jacket**:
+- You upload your **photo** and an image of the **blue jacket**.
+- The system processes the images and adjusts the jacket to fit your **body shape**.
+- You receive a final image where you **see yourself wearing the blue jacket**.
+
 ## 📸 Screenshots
 <img src="demo_screenshot.png" width="600" alt="Virtual Try-On Screenshot">
 
@@ -57,6 +78,3 @@ This project is licensed under the **MIT License**.
 
 ---
 ✨ **Experience the future of fashion with Virtual Try-On!** ✨
-
-
-
