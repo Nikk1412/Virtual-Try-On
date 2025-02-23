@@ -7,7 +7,7 @@ import io
 st.set_page_config(page_title="Virtual Try-On", page_icon="👕", layout="wide")
 
 # Load College Logo
-college_logo = "college_logo.png"
+college_logo = "TKIET logo.png"
 st.sidebar.image(college_logo, use_column_width=True)
 
 # Header Section
