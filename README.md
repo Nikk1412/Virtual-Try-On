@@ -45,7 +45,7 @@ Warananagar (An Autonomous Institute)
 
 Below is the architecture diagram showcasing how OOTDiffusion, IDM-VTON, and OutfitAnyone process image data to generate virtual try-on results.
 
-![Architecture Diagram](architecture_diagram.png)
+![Architecture Diagram](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.semanticscholar.org%2Fpaper%2FImage-Based-Virtual-Try-On-Network-From-Unpaired-Neuberger-Borenstein%2Fec524d364d699e21e3398ffc6659af43005bfcb0&psig=AOvVaw2V_FeCtiMMiKJo8miyGI8s&ust=1740404900310000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCJiew9H32YsDFQAAAAAdAAAAABBc)
 
 ### 🏗️ How It Works (Simple Explanation)
 1. **Input Image:** The user uploads a photo of themselves and a clothing image.
