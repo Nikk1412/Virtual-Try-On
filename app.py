@@ -1,60 +1,48 @@
 import streamlit as st
+import requests
 from PIL import Image
+import io
 
-# Set page configuration
-st.set_page_config(page_title="Virtual Try-On", layout="wide")
+# Set page title and favicon
+st.set_page_config(page_title="Virtual Try-On", page_icon="👕", layout="wide")
 
-# Sidebar - Team Information
-st.sidebar.title("Meet the Team")
-st.sidebar.write("### Project by:")
-st.sidebar.write("- **Nikhil Uday Mohite (31)**")
-st.sidebar.write("- **Sanket Sunil Chougule (65)**")
-st.sidebar.write("- **Pratik Sopan Gulig (68)**")
-st.sidebar.write("### Under the Guidance of:")
-st.sidebar.write("- **Prof. A. G. Patil**")
-st.sidebar.write("- Assistant Professor, TKIET Warananagar")
+# Load College Logo
+college_logo = "college_logo.png"
+st.sidebar.image(college_logo, use_column_width=True)
 
-# Main Page Layout
-col1, col2 = st.columns([3, 1])
-with col1:
-    st.title("👗 Virtual Try-On App")
-    st.markdown("""
-    **Imagine trying on clothes without ever leaving your home!**
-    - 🔥 Convenience: Try on clothes anywhere, anytime.
-    - 📉 Reduced Returns: See a realistic fit before buying.
-    - 🛍️ Increased Sales: More confidence in purchases.
-    - 🎯 Personalization: AI-powered recommendations.
-    """)
+# Header Section
+st.markdown(
+    """
+    <h1 style='text-align: center; color: #ff5733;'>🔥 Virtual Try-On System 🔥</h1>
+    <p style='text-align: center; color: #555;'>Experience AI-powered outfit trials with a sleek modern UI!</p>
+    """, unsafe_allow_html=True
+)
 
-# Model Selection Tabs
-st.subheader("Select a Model")
-tabs = st.tabs(["OOTDiffusion", "IDM-VTON", "OutfitAnyone"])
+# Upload Image Section
+st.markdown("## Upload Your Photo")
+uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "png", "jpeg"], help="Upload a front-facing image for the best results.")
 
-# OOTDiffusion Model
-tabs[0].title("OOTDiffusion - AI Try-On")
-tabs[0].markdown("""
-- Ensures precise outfit alignment without warping.
-- Offers natural fit with realistic fabric details.
-""")
-iframe_src1 = "https://levihsu-ootdiffusion.hf.space"
-tabs[0].markdown(f'<iframe src="{iframe_src1}" width="100%" height="600" frameborder="0"></iframe>', unsafe_allow_html=True)
+if uploaded_file is not None:
+    image = Image.open(uploaded_file)
+    st.image(image, caption="Your Uploaded Image", use_column_width=True)
+    
+    # Select Clothing Model
+    model_option = st.selectbox("Select a Virtual Try-On Model:", ["OOTDiffusion", "IDM-VTON", "OutfitAnyone"], index=0)
+    st.write(f"You selected: **{model_option}**")
+    
+    # Process Image Button
+    if st.button("Try On Now!", key="process"):
+        st.success("Processing your virtual try-on request... 🕒")
+        # Placeholder for ML API request
+        st.image(image, caption="[Generated Try-On Preview]", use_column_width=True)
 
-# IDM-VTON Model
-tabs[1].title("IDM-VTON - Advanced Try-On")
-tabs[1].markdown("""
-- Allows virtual try-on regardless of body type.
-- AI-based automated masking for better accuracy.
-""")
-iframe_src2 = "https://yisol-idm-vton.hf.space"
-tabs[1].markdown(f'<iframe src="{iframe_src2}" width="100%" height="600" frameborder="0"></iframe>', unsafe_allow_html=True)
-
-# OutfitAnyone Model
-tabs[2].title("OutfitAnyone - Smart Try-On")
-tabs[2].markdown("""
-- Adapts to various body shapes and poses.
-- Delivers well-fitted clothing representations.
-""")
-iframe_src3 = "https://humanaigc-outfitanyone.hf.space"
-tabs[2].markdown(f'<iframe src="{iframe_src3}" width="100%" height="600" frameborder="0"></iframe>', unsafe_allow_html=True)
-
-st.success("✅ Enjoy Virtual Try-On & Explore Fashion Like Never Before!")
+# Footer Section
+st.markdown(
+    """
+    ---
+    <div style='text-align: center;'>
+        <p>Developed by <b>Team Virtual Try-On</b></p>
+        <p><i>Under the guidance of Prof. A. G. Patil</i></p>
+    </div>
+    """, unsafe_allow_html=True
+)
