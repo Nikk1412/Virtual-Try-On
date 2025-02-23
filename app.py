@@ -48,7 +48,7 @@ def show_landing_page():
         st.title("Virtual Try-On")
 
     with col3:
-        st.image("BugendaiTech LOGO.png", width=200)
+        st.image("name-png-logo-nik-creation-nikhil-creations.png", width=200)
 
     description = """
     **Imagine trying on clothes without ever leaving your home! That's the magic of virtual try-on.**
