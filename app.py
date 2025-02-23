@@ -6,7 +6,7 @@ def main():
     st.set_page_config(page_title="Virtual Try-On", layout="wide")
     
     # Sidebar for navigation
-    st.sidebar.image("name-png-logo-nik-creation-nikhil-creations.png", width=200)
+    st.sidebar.image("TKIET logo.png", width=200)
     st.sidebar.title("Navigation")
     page = st.sidebar.radio("Go to", ["Home", "OOTDiffusion", "IDM-VTON", "OutfitAnyone"])
     
@@ -37,7 +37,7 @@ def show_home():
             """, unsafe_allow_html=True)
     
     with col2:
-        image = Image.open("TKIET logo.png")  # Replace with actual cover image
+      #  image = Image.open("TKIET logo.png")  # Replace with actual cover image
         st.image(image, use_column_width=True)
     
     # Group Details
